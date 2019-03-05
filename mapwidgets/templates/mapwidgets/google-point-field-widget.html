@@ -22,7 +22,11 @@
                 <a class="mw-btn mw-btn-info mw-btn-my-location" >{% trans "Use My Location" %}</a>
                 <a class="mw-btn mw-btn-warning mw-btn-add-marker" ><i class="icon-location"></i></a>
                 <div class="mw-adress-input-wrap pull-right">
+                    {% if address_field_name %}
+                    <input type="text" class="form-control pull-right" id="{{ name }}-mw-google-address-input" name="{{ address_field_name }}" placeholder="{% trans 'Enter or update the address here' %}"/>
+                    {% else %}
                     <input type="text" class="form-control pull-right" id="{{ name }}-mw-google-address-input" placeholder="{% trans 'Enter or update the address here' %}"/>
+                    {% endif %}
                 </div>
             {% endblock header %}
         </div>
